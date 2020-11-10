@@ -37,11 +37,13 @@ SELECT ALL SQUARES PARAGRAPHS IN THE ARRAY
 -----------------------------------*/
 .squares:nth-child(-n+ 4) p{
     font-family: "Helvatica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.5cm;
-    font-weight: 900;
+    font-size: 1cm;
+    font-weight: 200;
     text-align: center;
     margin: 0;
     text-shadow: 2px 1px 4px rgba(0,0,0, 0.8);
+    position: relative;
+    top: -50px;
 }
 
 /*----------------------------------------
