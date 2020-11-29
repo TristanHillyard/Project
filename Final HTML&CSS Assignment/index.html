@@ -11,15 +11,19 @@
 
             <div class="navbar">
                 <a class="active" href="#home">Home</a>
+                <a href="#SlideShow">SlideShow</a>
                 <a href="About">About</a>
                 <a href="Github">Github</a>
-                <a href="Contact">Contact</a>
+                <a onclick="openForm()" ondblclick="closeForm()">Contact</a> <!--Makes it so that our openForm function runs when we click contact-->
             </div>
 
             <br>
             <br>
 
             <div id="Home">
+                <br>
+                <br>
+
                 <video autoplay muted loop id="Keyboard">
                     <source src="Images/Keyboard.mp4" type="video/mp4">
                     Your browser does not support HTML5 video.
@@ -28,19 +32,48 @@
 
             <!--Video text-->
             <div class="Video_Text">
-                <h1 class="white_text">Tristan Hillyard's Portfolio</h1>
-                <strong>
-                    <p class="center">
-                        <q>The computer programmer is a creator of universes for which he alone is the lawgiver.
-                            <br>No playwright, no stage director, no emperor, however powerful, has ever exerciesed such
+                <h1 style="color:white;">Tristan Hillyard's Portfolio</h1>
+                <p>
+                    <strong>
+                        <center>
+                            <q>The computer programmer is a creator of universes for which he alone is the lawgiver.
+                                <br>No playwright, no stage director, no emperor, however powerful, has ever exerciesed such
 absolute authority to arrange a stage or
-                            <br>field of battle and to command such unswervingly dutiful actors or troops.
-                        </q>
-                        <br> -Joeseph Weizenbaum
-                        <br>
-                        <br> My name is Tristan Hillyard. Welcome to my Portfolio website. On it, I will tell you about my background and experience.
-                    </p>
-                </strong>
+                                <br>field of battle and to command such unswervingly dutiful actors or troops.
+                            </q>
+                            <br> -Joeseph Weizenbaum
+                            <br>
+                            <br> My name is Tristan Hillyard. Welcome to my Portfolio website. On it, I will tell you about my background and experience.
+                        </center>
+                    </strong
+                </p>
+            </div>
+
+            <!--Slideshow section-->
+            <div id="#SlideShow">
+                <div id="Slideshow_Background">
+                    <div id="Slideshow_Container">
+
+                        <div class="mySlides fade">
+                            <div class="Slide_Number">1 / 2</div>
+                            <img class="Slide_Show_Images" src="./Images/portfolio_1.jpg" style="width: 100%">
+                            <div class="text">I am a full-stack software developer, <br> trained in:<br>HTML, CSS, JavaScript,</div>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <div class="Slide_Number">2 / 2</div>
+                            <img class="Slide_Show_Images" src="Images/portfolio_2.jpg" style="width: 100%;">
+                            <div class="text">
+                                <a onclick="openForm()" href="#Contact" style="color:white;">Contact me now!</a>
+                            </div>
+                        </div>
+                        <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="Next" onclick="plusSlides(1)">&#10095</a>
+                    </div>
+                    <div style="text-align: center;">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                </div>
             </div>
 
             <!--About Section-->
@@ -57,7 +90,7 @@ absolute authority to arrange a stage or
                         <br> I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>'s Software Developer Boot Camp, and trained and experienced in the following programming languages:
 HTML, CSS, JavaScript, SQL, and C#.
                         <br>
-                        <br>I am a full-stack developer and would love to work with you on your project. <a href="#Contact">Contact</a> me below!
+                        <br>I am a full-stack developer and would love to work with you on your project.
                     </P>
                 </div>
             </div>
@@ -80,25 +113,22 @@ HTML, CSS, JavaScript, SQL, and C#.
             </div>
 
             <!--Contact Section-->
-            <div class="Row" id="Conact">
-                <!--Contact Image, Left column-->
-                <div class="Column_2 Column_tall">
-                    <img src="Images/longcodingscreen.jpg" alt="Contact Image">
-                </div>
-                <!--Contact Form Right Column-->
-                <div class="Column_1 Column_tall">
-                    <h1>Contact</h1>
-                    <!--This specifies where and how to send the form data; we are leacing it blank-->
-                    <form action="https://formspree.io/f/xrgolqvj" method="POST"><!--Here we are utilizing a 3rd party service to submit the contact form data, inster your formspree endpoint in the action attribute-->
-                        <label>Name:</label>
-                            <input type="text" placeholder="Please enter your name">
-                        <label>Email:</label>
-                            <input type="text" id="Email" name="Message" placeholder="Please enter your email here">
-                        <label>Message:</label>
-                            <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                            <input type="submit" value="SUBMIT">
-                    </form>
-                </div>
+            <div id="Contact">
+                <button onclick="openForm()" class="Pop_Up_Button">Contact</button>
+                    <div class="form-popup" id="myform">
+                        <h1>Contact</h1>
+                        <!--This specifies where and how to send the form data; we are leacing it blank-->
+                        <form action="https://formspree.io/f/xrgolqvj" method="POST" class="form-container"><!--Here we are utilizing a 3rd party service to submit the contact form data, inster your formspree endpoint in the action attribute-->
+                            <label>Name:</label>
+                                <input type="text" placeholder="Please enter your name">
+                            <label>Email:</label>
+                                <input type="text" id="Email" name="Message" placeholder="Please enter your email here">
+                            <label>Message:</label>
+                                <input type="text" id="Message" name="Message" placeholder="Please write your message here">
+                <button type="submit" class="btn">SUBMIT</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                        </form>
+                    </div>
             </div>
 
             <!--Footer Section-->
@@ -107,5 +137,6 @@ HTML, CSS, JavaScript, SQL, and C#.
                     <p class="center">&copy; Prosper Consulting Inc., <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a></p>
                 </p>
             </footer>
+            <script src="JS/portfolio.js"></script>
     </body>
 </html>
